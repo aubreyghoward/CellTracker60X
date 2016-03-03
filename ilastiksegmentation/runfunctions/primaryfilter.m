@@ -7,10 +7,12 @@ function pmasks = primaryfilter(pnuc, logfilter, bthreshfilter, diskfilter, area
     s = logfilter;
     h  = fspecial('log',s);
    
+   
     
     for z= 1:size(pnuc,3)
         im = pnuc(:,:,z);
         logim2(:,:,z) = imfilter(im, h);
+        
     end
     
    

@@ -1,4 +1,4 @@
-function ilastikuserparam
+function ilastikuserparamcluster
 
 global userparam
 %
@@ -15,8 +15,8 @@ global userparam
 userparam.segfiledir = '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/ilastiksegmentationmasks';
 userparam.rawfiledir = '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/images00'; 
 userparam.mrnafilepath = '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/spatzcellspotcount';
-userparam.outfiledir =  '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/peaksoutputdirecnew';
-userparam.imageoutputdir = '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/segmentedimages';
+userparam.outfiledir =  '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/peaksoutputdirec';
+userparam.imageoutputdir = '/Users/sapnachhabra/Desktop/CellTrackercd/Experiments/160212FISH_images/spatzcellsimages_FISHnew/sementedimages';
 userparam.fluorpdir = 0; % if there is no fluorescent protein quantification, set this to 0; else, specify the path corresponding to images with proteinchannel.
 %%
 userparam.nsamples = 23;

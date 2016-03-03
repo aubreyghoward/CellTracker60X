@@ -17,29 +17,35 @@ zend = zrange(end);
 % recalculating zstart and zend
 
 m = 1;
+objectsz(1:zend) = 0;
+
 for z = zstart:zend
     objects = bwconncomp(smasks(:,:,z));
-    if(objects.NumObjects > 0);
+    if(objects.NumObjects > 3);
         zvalue(1,m) = z;
         m = m+1;
+        objectsz(z) = objects.NumObjects;
     end
 end
-zstart = zvalue(1,1);
-clear zend;
-
-for ii = 1:numel(zvalue)-1
-    if((zvalue(ii+1) - zvalue(ii))>1)
-        zend = zvalue(ii);
-        break;
-    end
-end
-
-if(~exist('zend'))
-    zend = zvalue(end);
-end
-
 
 if(exist('zvalue'))
+    zstart = zvalue(1,1);
+    clear zend;
+    
+    
+    for ii = 1:numel(zvalue)-1
+        if((zvalue(ii+1) - zvalue(ii))>1 && objectsz(zvalue(ii)+1) == 0)
+            zstart = zvalue(ii+1);
+            break;
+        end
+    end
+    
+    if(~exist('zend'))
+        zend = zvalue(end);
+    end
+    
+    
+    
     
     %%
     
@@ -102,6 +108,7 @@ if(exist('zvalue'))
         end
         %%
         for z = zstart+2:zend
+            
             
             if(z< zstart+n)
                 frchksize = z-zstart;
@@ -191,6 +198,7 @@ if(exist('zvalue'))
                 frn = frn+1;
                 mfrn = mfrn+1;
             end
+            
         end
     end
     
